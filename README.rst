@@ -1,7 +1,8 @@
-# anime-namer
+Anime Namer
 Anime namer is a FREE comand line renamer for all the anime files similar to filebot(which is now paid).
 
 CONTRIBUTE:
+---------------------------
 Please buy me a coffee if you found this to be useful
 
 
@@ -9,8 +10,10 @@ Please buy me a coffee if you found this to be useful
 PLEASE TRY WITH ONE EPISODE BEFORE TRYING WITH COMPLETE SEREIS.(COPY FILE TO A DIFFERENT FOLDER AND TRY)
 
 HOW TO USE
+----------------
 
 Prerequisites:
+----------------------
 
 This script will ONLY work if you have episode number in your episode name.
 
@@ -21,12 +24,13 @@ example:[ANIMEKG] Title episode 356 [720p].mp4
 you have to make it 356.mp4 while running main.py
 
 Steps:
+------------------
 1)run PIP install pip install tvdbsimple
-
 2)Copy all .py files into the base folder on the series
 
 
 Detailed explanation[MUST READ]
+------------------------------
 
 This script works bsed on absolute numbering (i mean episode numbers like episode 2.mp4)
 
@@ -53,6 +57,7 @@ if yes this will download meta data for all episodes.
 
 
 DEVELOPER
+----------------------------
 
 Please contribute.
 
