@@ -7,9 +7,15 @@ invalidfiles=[]
 
 def getseason(filename):
     """this will return the season number given the file name and create folde if dowesnt exist"""
-    temp = (filename.split('Ep:'))[1].split('-')[0]
-    season = temp.split('S')[1].split('E')[0].strip()
-    print('directory exists') if(isdir(getcwd()+'/Season '+str(season))) else mkdir(getcwd()+'/Season '+str(season))
+    try:
+        temp = (filename.split('Ep:'))[1].split('-')[0]
+        season = temp.split('S')[1].split('E')[0].strip()
+        print('directory exists') if (isdir(getcwd() + '/Season ' + str(season))) else mkdir(
+            getcwd() + '/Season ' + str(season))
+    except:
+        season=1
+
+
     return str(season)
 
 
@@ -28,6 +34,7 @@ def move_files():
             except IOError:
                 print(IOError)
                 print(file)
+                continue
 
         else:
             invalidfiles.append(file)
