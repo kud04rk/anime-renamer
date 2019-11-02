@@ -1,8 +1,8 @@
-Anime Namer
+Anime Renamer
 -------------------
 ------------------- 
 
-Anime namer is a FREE comand line renamer for all the anime files similar to filebot(which is now paid).
+Anime Renamer is a FREE comand line renamer for all the anime files similar to filebot(which is now paid).
 
 CONTRIBUTE:
 ---------------------------
