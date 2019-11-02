@@ -1,4 +1,6 @@
 Anime Namer
+.. image:: https://travis-ci.org/smsriharsha/anime-namer.svg?branch=master
+   :target: https://travis-ci.org/smsriharsha/anime-namer
 Anime namer is a FREE comand line renamer for all the anime files similar to filebot(which is now paid).
 
 CONTRIBUTE:
