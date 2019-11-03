@@ -116,11 +116,11 @@ def make_filename(seriesname,seasonnumber,seasonepisode,episodename,episodenumbe
     this is used to make filename as per the format
     :return:
     """
-    name = [str(seriesname), ' Ep:', str(episodenumber), ' S', str(seasonnumber), 'E', str(seasonepisode), ' -', str(episodename)]
+    name = [str(seriesname), ' Ep-', str(episodenumber), ' S', str(seasonnumber), 'E', str(seasonepisode), ' -', str(episodename)]
 
     finalname=''.join(name)
 
-    return finalname
+    return finalname.replace(':', '!')
 
 
 def linesep():

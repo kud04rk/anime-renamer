@@ -46,7 +46,7 @@ def getnameextensions(name):
 
 def get_episodeno(filename):
     try:
-        temp = (filename.split('Ep:'))[1].split('-')[0]
+        temp = (filename.split('Ep-'))[1].split('-')[0]
         episode = temp[0:temp.find("S")].strip()
     except:
         episode=1

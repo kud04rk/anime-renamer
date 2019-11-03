@@ -8,7 +8,7 @@ invalidfiles=[]
 def getseason(filename):
     """this will return the season number given the file name and create folde if dowesnt exist"""
     try:
-        temp = (filename.split('Ep:'))[1].split('-')[0]
+        temp = (filename.split('Ep-'))[1].split('-')[0]
         season = temp.split('S')[1].split('E')[0].strip()
         print('directory exists') if (isdir(getcwd() + '/Season ' + str(season))) else mkdir(
             getcwd() + '/Season ' + str(season))
