@@ -6,10 +6,6 @@ Anime Renamer is a FREE comand line renamer for all the anime files similar to f
 
 CONTRIBUTE:
 ---------------------------
-Please buy me a coffee if you found this to be useful
-
-
-
 PLEASE TRY WITH ONE EPISODE BEFORE TRYING WITH COMPLETE SEREIS.(COPY FILE TO A DIFFERENT FOLDER AND TRY)
 
 HOW TO USE
