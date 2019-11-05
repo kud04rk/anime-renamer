@@ -25,7 +25,8 @@ you have to make it 356.mp4 while running main.py
 
 Steps:
 ------------------
-1)run PIP install pip install tvdbsimple
+1)run pip install tvdbsimple(need python for pip to work)
+
 2)Copy all .py files into the base folder on the series
 
 
