@@ -3,7 +3,7 @@ Anime Renamer
 ------------------- 
 
 Anime Renamer is a FREE comand line renamer for all the anime files similar to filebot(which is now paid).
-Any issues with the code please write in issues.
+Any issues with the code please write in issues section (comments feedback or enchnacement are also welcome).
 
 CONTRIBUTE:
 ---------------------------
@@ -62,5 +62,9 @@ DEVELOPER
 Please contribute.
 
 fork -> clone-> branch-> commit with proper comments.
+
+Thanks
+---------------------------
+Thanks to TVDBsimple.
 
 
