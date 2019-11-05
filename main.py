@@ -9,7 +9,7 @@ def main():
     series_name = raw_input("What's the name of anime? eg naruto One Piece . Be precise line caps etc: ")
     search = tvdb.Search()
     matched_names = search.series(series_name)
-    i=0
+    i=1
     for series in matched_names:
         sep()
         print('No   :', i)
