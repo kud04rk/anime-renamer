@@ -22,7 +22,7 @@ def getseason(filename):
 def move_files():
     """this is move files to respective folders"""
     exts = ['.mkv', '.mp4', '.avi', '.flv', '.mpg', '.mpeg', '.wmv', '.webm', '.vob', '.mov', '.3gp', '.ogv']
-    allfiles = [f for f in listdir('.') if isfile(join('.', f))]
+    allfiles = [f for f in listdir(getcwd()) if isfile(join('.', f))]
     for file in allfiles:
         if getextensions(file) in exts:
             try:

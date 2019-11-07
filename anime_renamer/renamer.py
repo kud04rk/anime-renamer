@@ -7,8 +7,9 @@ import tvdbsimple as tvdb
 from pip._vendor.distlib.compat import raw_input
 
 tvdb.KEYS.API_KEY = 'UB0SOLRB8XH3I39L'
-validfiles=[]
-invalidfiles=[]
+validfiles = []
+invalidfiles = []
+
 
 class sfilenames:
     def __init__(self, episodenumber, filename, extension):
@@ -17,19 +18,31 @@ class sfilenames:
         self.episodenumber = episodenumber
 
 
-def main(path='.'):
+def main(path=getcwd()):
     """
     does all the operations in steps
     :param path:
     :return:
     """
-    print(sys.argv[1])
     get_series_deatils(sys.argv[1])
     scanfolder(path)
     match_filename(sys.argv[1])
 
     return
 
+
+def mainpackage(seriesid):
+    """
+    does all the operations in steps
+    :param path:
+    :return:
+    """
+    path = getcwd()
+    get_series_deatils(seriesid)
+    scanfolder(path)
+    match_filename(seriesid)
+
+    return
 
 
 def scanfolder(path):
@@ -40,7 +53,7 @@ def scanfolder(path):
     """
     """need to go into config file supported extensions"""
     exts = ['.mkv', '.mp4', '.avi', '.flv', '.mpg', '.mpeg', '.wmv', '.webm', '.vob', '.mov', '.3gp', '.ogv']
-    allfiles = [f for f in listdir('.') if isfile(join('.', f))]
+    allfiles = [f for f in listdir(path) if isfile(join('.', f))]
     for file in allfiles:
         if getextension(file) in exts:
             try:
@@ -51,7 +64,6 @@ def scanfolder(path):
 
         else:
             invalidfiles.append(file)
-
 
     return
 
@@ -64,7 +76,6 @@ def getextension(filename):
     """
     a = filename.rfind('.')
     return filename[a:]
-
 
 
 def get_series_deatils(seriesid):
@@ -105,20 +116,22 @@ def match_filename(seriesid):
                     src = getcwd() + '/' + k.filename
                     dst = getcwd() + '/' + outfilename + k.extension
                     rename(src, dst)
-            except:
+            except IOError:
+                print(IOError)
                 continue
 
     return
 
 
-def make_filename(seriesname,seasonnumber,seasonepisode,episodename,episodenumber):
+def make_filename(seriesname, seasonnumber, seasonepisode, episodename, episodenumber):
     """
     this is used to make filename as per the format
     :return:
     """
-    name = [str(seriesname), ' Ep-', str(episodenumber), ' S', str(seasonnumber), 'E', str(seasonepisode), ' -', str(episodename)]
+    name = [str(seriesname), ' Ep-', str(episodenumber), ' S', str(seasonnumber), 'E', str(seasonepisode), ' -',
+            str(episodename)]
 
-    finalname=''.join(name)
+    finalname = ''.join(name)
 
     return finalname.replace(':', '!').replace('?', '')
 
@@ -131,5 +144,9 @@ def linesep():
     print("-" * 100)
     return
 
+if len(sys.argv) > 1:
+    main()
+else:
+    blah = ''
 
-main()
+

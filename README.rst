@@ -2,16 +2,16 @@ Anime Renamer
 -------------------
 ------------------- 
 
-Anime Renamer is a FREE comand line renamer for all the anime files similar to filebot(which is now paid).
+Anime Renamer is a FREE,simple to use comand line renamer for all the anime files similar to filebot(which is now paid).
 Any issues with the code please write in issues section (comments feedback or enchnacement are also welcome).
 
+Personnaly used for many anime.
 CONTRIBUTE:
 ---------------------------
 PLEASE TRY WITH ONE EPISODE BEFORE TRYING WITH COMPLETE SEREIS.(COPY FILE TO A DIFFERENT FOLDER AND TRY)
 
 HOW TO USE
 ----------------
-
 Prerequisites:
 ----------------------
 
@@ -23,11 +23,21 @@ example:[ANIMEKG] Title episode 356 [720p].mp4
 
 you have to make it 356.mp4 while running main.py
 
+Two ways to USE:
+----------------------
+Meathod 1
+
+1)install anime-renamer (pip install anime-renamer)
+
+2)run anime_renamer in the base folder of the anime.
+
+
+Meathod 2(dont want to install)
 Steps:
 ------------------
 1)run pip install tvdbsimple(need python for pip to work)
 
-2)Copy all .py files into the base folder on the series
+2)Copy all .py files from anime_reanmer folder into the base folder of the series
 
 
 Detailed explanation[MUST READ]
@@ -56,6 +66,10 @@ if yes this will oraanized the reanamed episodes into respective season folders
 if yes this will download meta data for all episodes.
  
 
+ROLLBACK
+-------------------------------------
+IF u didnt like the output or want to change it fpr any other reason
+copy rollback.py from anime_renamer folder and run it.(python rollack.py)
 
 DEVELOPER
 ----------------------------

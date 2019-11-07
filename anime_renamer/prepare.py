@@ -18,6 +18,7 @@ def getfileextensions(filename):
 
 
 def preparefiles():
+    print('inside prepare files')
     for root, dirs, files in walk(".", topdown=False):
         for name in files:
             filename = join(root, name)
