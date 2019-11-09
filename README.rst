@@ -6,12 +6,15 @@ Anime Renamer is a FREE,simple to use comand line renamer for all the anime file
 Any issues with the code please write in issues section (comments feedback or enchnacement are also welcome).
 
 Personnaly used for many anime.
+
 CONTRIBUTE:
 ---------------------------
+
 PLEASE TRY WITH ONE EPISODE BEFORE TRYING WITH COMPLETE SEREIS.(COPY FILE TO A DIFFERENT FOLDER AND TRY)
 
 HOW TO USE
 ----------------
+
 Prerequisites:
 ----------------------
 
@@ -25,6 +28,7 @@ you have to make it 356.mp4 while running main.py
 
 Two ways to USE:
 ----------------------
+
 Meathod 1
 
 1)install anime-renamer (pip install anime-renamer)
@@ -33,8 +37,10 @@ Meathod 1
 
 
 Meathod 2(dont want to install)
+
 Steps:
 ------------------
+
 1)run pip install tvdbsimple(need python for pip to work)
 
 2)Copy all .py files from anime_reanmer folder into the base folder of the series
