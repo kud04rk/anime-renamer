@@ -43,7 +43,7 @@ Steps:
 
 1)run pip install tvdbsimple(need python for pip to work)
 
-2)Copy all .py files from anime_reanmer folder into the base folder of the series
+2)Copy all .py files from anime_reanmer folder into the base folder of the series and run python main.py
 
 
 Detailed explanation[MUST READ]
