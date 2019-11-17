@@ -1,3 +1,7 @@
+
+Currenlty TVDB api is not working properly. so please use this later.
+--------------------
+
 Anime Renamer
 -------------------
 ------------------- 
@@ -31,7 +35,7 @@ Two ways to USE:
 
 Meathod 1
 
-1)install anime-renamer (pip install anime-renamer)
+1)install anime-renamer :code:`pip install anime-renamer`
 
 2)run anime_renamer in the base folder of the anime.
 
