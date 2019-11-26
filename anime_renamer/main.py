@@ -12,11 +12,16 @@ def main():
     i=1
     for series in matched_names:
         sep()
-        print('No   :', i)
-        print('Series name       : ', series['seriesName'])
-        print('Overview          : ', series['overview'])
+        if 'overview' not in series:
+            print('No   :', i)
+            print('Series name       : ', series['seriesName'])
+        else:
+            print('No   :', i)
+            print('Series name       : ', series['seriesName'])
+            print('Overview          : ', series['overview'])
+
         sep()
-        i=i+1
+        i = i + 1
     id = raw_input("Please enter the Series NUMBER from the above list ")
     seriesid=matched_names[int(id)-1]['id']
     print('seriesid:'+str(seriesid))

@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='anime_renamer',
-    version='0.2',
+    version='0.3',
     packages=['anime_renamer'],
     entry_points={
         'console_scripts': [
