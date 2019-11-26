@@ -1,7 +1,3 @@
-
-Currenlty TVDB api is not working properly. so please use this later.
---------------------
-
 Anime Renamer
 -------------------
 ------------------- 
@@ -32,6 +28,11 @@ you have to make it 356.mp4 while running main.py
 
 Two ways to USE:
 ----------------------
+Windows users
+
+Download the exe file from releases and run it in the folder with the series.
+
+Common for all operating systems.
 
 Meathod 1
 
@@ -87,6 +88,13 @@ DEVELOPER
 Please contribute.
 
 fork -> clone-> branch-> commit with proper comments.
+
+TO-DO
+------------------------------------------
+1)Need to make electron app for ease of use.
+
+2)Support for more input file formats like s01e02.
+
 
 Thanks
 ---------------------------
