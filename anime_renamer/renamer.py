@@ -123,13 +123,16 @@ def match_filename(seriesid):
     return
 
 
+def removeNonAscii(s): return "".join(i for i in s if ord(i) < 128)
+
+
 def make_filename(seriesname, seasonnumber, seasonepisode, episodename, episodenumber):
     """
     this is used to make filename as per the format
     :return:
     """
-    name = [str(seriesname), ' Ep-', str(episodenumber), ' S', str(seasonnumber), 'E', str(seasonepisode), ' -',
-            str(episodename)]
+    name = [str(removeNonAscii(seriesname)), ' Ep-', str(episodenumber), ' S', str(seasonnumber), 'E', str(seasonepisode), ' -',
+            str(removeNonAscii(episodename))]
 
     finalname = ''.join(name)
 
@@ -144,9 +147,8 @@ def linesep():
     print("-" * 100)
     return
 
+
 if len(sys.argv) > 1:
     main()
 else:
     blah = ''
-
-

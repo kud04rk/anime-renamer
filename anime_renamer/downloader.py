@@ -62,10 +62,11 @@ def download_episode_data(sereisid):
                 for s in episodes:
                     try:
                         if s['absoluteNumber'] == get_episodeno(filename):
-                            downlaod_file_images(s['filename'], getcwd() + filename.replace('./', '/').replace(
+                            downlaod_file_images(s['filename'], filename.replace('./', getcwd()).replace(
                                 getnameextensions(filename), ''))
-                    except IOError:
-                        print(IOError.strerror)
+                    except IOError as e:
+                        print(e.errno)
+                        print(e)
                     continue
     return
 

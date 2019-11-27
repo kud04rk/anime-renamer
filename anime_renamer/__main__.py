@@ -1,6 +1,8 @@
 import tvdbsimple as tvdb
 from pip._vendor.distlib.compat import raw_input
 
+
+
 tvdb.KEYS.API_KEY = 'UB0SOLRB8XH3I39L'
 
 
@@ -84,6 +86,7 @@ def remove():
     from anime_renamer.remover import scancurrentfolder
     removeresult = raw_input("Remove text to only leave episode number(y/n)(read docs!) ")
     if removeresult == 'y':
+        scancurrentfolder()
         remove()
 
     return
