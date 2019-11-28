@@ -20,8 +20,6 @@ Prerequisites:
 
 This script will ONLY work if you have episode number in your episode name.
 
-you have to manually convert the episode name into 1.mp4 2.mp4 etc for this script to work
-
 example:[ANIMEKG] Title episode 356 [720p].mp4
 
 you have to make it 356.mp4 while running main.py
