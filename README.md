@@ -14,6 +14,7 @@ PLEASE TRY WITH ONE EPISODE BEFORE TRYING WITH COMPLETE SEREIS.(COPY FILE TO A D
 
 HOW TO USE
 ----------------
+![](https://github.com/smsriharsha/anime-renamer/blob/master/videos%20and%20images/Animerenamecli.gif)
 
 Prerequisites:
 ----------------------
@@ -34,7 +35,7 @@ Common for all operating systems.
 
 Meathod 1
 
-1)install anime-renamer :code:`pip install anime-renamer`
+1)install anime-renamer ```pip install anime-renamer```
 
 2)run anime_renamer in the base folder of the anime.
 
@@ -44,7 +45,7 @@ Meathod 2(dont want to install)
 Steps:
 ------------------
 
-1)run pip install tvdbsimple(need python for pip to work)
+1)run ```pip install tvdbsimple``` (need python for pip to work)
 
 2)Copy all .py files from anime_reanmer folder into the base folder of the series and run python main.py
 
