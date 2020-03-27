@@ -115,6 +115,8 @@ def match_filename(seriesid):
                                                 s['absoluteNumber'])
                     src = getcwd() + '/' + k.filename
                     dst = getcwd() + '/' + outfilename + k.extension
+                    print(src)
+                    print(dst)
                     rename(src, dst)
             except IOError:
                 print(IOError)
@@ -136,7 +138,7 @@ def make_filename(seriesname, seasonnumber, seasonepisode, episodename, episoden
 
     finalname = ''.join(name)
 
-    return finalname.replace(':', '!').replace('?', '')
+    return finalname.replace(':', '!').replace('?', '').replace('/', '')
 
 
 def linesep():

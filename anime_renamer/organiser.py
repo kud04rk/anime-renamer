@@ -13,7 +13,10 @@ def getseason(filename):
         print('directory exists') if (isdir(getcwd() + '/Season ' + str(season))) else mkdir(
             getcwd() + '/Season ' + str(season))
     except:
-        season=1
+        season = 0
+        print('directory exists') if (isdir(getcwd() + '/Season 0')) else mkdir(
+            getcwd() + '/Season 0')
+
 
 
     return str(season)
@@ -29,6 +32,8 @@ def move_files():
 
                 src=getcwd()+'/'+str(file)
                 dst=getcwd()+'/Season '+getseason(str(file))+'/'+str(file)
+                print(src)
+                print(dst)
                 rename(src, dst)
 
             except IOError:
