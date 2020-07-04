@@ -6,6 +6,12 @@ Anime Renamer is a FREE,simple to use comand line renamer for all the anime file
 Any issues with the code please write in issues section (comments feedback or enchnacement are also welcome).
 
 Personnaly used for many anime.
+1)Naruto
+2)One Piece
+3)Gintama
+4)Promised neverland
+5)Angel beats
+6)Deamon Slayer etc...
 
 CONTRIBUTE:
 ---------------------------
