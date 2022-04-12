@@ -9,7 +9,7 @@ setup(
             'anime_renamer = anime_renamer.__main__:main'
         ]
     },
-    url='https://github.com/smsriharsha/anime-renamer',
+    url='https://github.com/kud04rk/anime-renamer',
     license='MIT',
     author='kudoark',
     author_email='',
