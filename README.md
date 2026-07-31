@@ -2,96 +2,131 @@
 
 ---
 
-Anime Renamer is a FREE,simple to use comand line renamer for all the anime files similar to filebot(which is now paid).
-Any issues with the code please write in issues section (comments feedback or enchnacement are also welcome).
+Anime Renamer is a FREE, simple to use command line renamer for anime files
+(similar to FileBot, which is now paid). It is powered by
+[TheTVDB](https://thetvdb.com) metadata.
 
-Personnaly used for many anime.
-1)Naruto
-2)One Piece
-3)Gintama
-4)Promised neverland
-5)Angel beats
-6)Deamon Slayer etc...
+Any issues with the code please write in the issues section (comments,
+feedback or enhancement are also welcome).
 
-## CONTRIBUTE:
+Personally used for many anime:
 
-PLEASE TRY WITH ONE EPISODE BEFORE TRYING WITH COMPLETE SEREIS.(COPY FILE TO A DIFFERENT FOLDER AND TRY)
+1. Naruto
+2. One Piece
+3. Gintama
+4. Promised Neverland
+5. Angel Beats
+6. Demon Slayer
+... and many more.
+
+## Platform support
+
+Anime Renamer now works on **Windows, Linux and macOS**. It only needs
+Python 3.6+ and an internet connection (to reach TheTVDB).
+
+## CONTRIBUTE
+
+PLEASE TRY WITH ONE EPISODE BEFORE TRYING WITH COMPLETE SERIES.
+(Copy the file to a different folder and try there first.)
 
 ## HOW TO USE
 
-![](https://github.com/kud04rk/anime-renamer/blob/master/videos%20and%20images/Animerenamecli.gif)
+### Install method (recommended, all operating systems)
 
-## Prerequisites:
+```bash
+pip install anime-renamer        # or: pip install .
+anime_renamer                    # run inside the base folder of the series
+```
 
-This script will ONLY work if you have episode number in your episode name.
+You can also run it without installing the console script:
 
-example:[ANIMEKG] Title episode 356 [720p].mp4
+```bash
+python -m anime_renamer          # from the repo root, inside the series folder
+```
 
-you have to make it 356.mp4 while running main.py
+### Copy & run method (no install)
 
-## Two ways to USE:
+1. Install the dependencies: `pip install tvdbsimple requests`
+2. Copy every `.py` file from the `anime_renamer` folder into the base folder
+   of the series.
+3. Run `python main.py`
 
-Windows users
+### Windows users
 
-Download the exe file from releases and run it in the folder with the series.
+You can still download the `.exe` from releases and run it in the folder with
+the series, or use any of the methods above.
 
-Common for all operating systems.
+## Prerequisites
 
-Meathod 1
+The only hard requirement is that each file name must contain an episode
+number that the tool can recognise. It now understands a wide variety of
+real-world naming conventions, for example:
 
-1)install anime-renamer `pip install anime-renamer`
+| Input file name                              | Recognised as |
+| -------------------------------------------- | ------------- |
+| `356.mp4`                                     | absolute 356  |
+| `[Group] Title - 356 [720p].mkv`             | absolute 356  |
+| `Title S01E02.mkv` / `Title s1 e2.mkv`       | S01E02        |
+| `Title 1x02.mkv`                             | S01E02        |
+| `Title EP12.mkv` / `Title Episode 12.mkv`    | absolute 12   |
+| `Title - 12 END.mkv`                         | absolute 12   |
 
-2)run anime_renamer in the base folder of the anime.
+## Detailed explanation [MUST READ]
 
-Meathod 2(dont want to install)
+When you start the tool it will ask whether you want to **roll back** a
+previous run first. Answer `n` to perform a normal run. You will then be
+asked for the anime name, pick the correct series from the search results,
+and then walk through each stage (you can skip any stage with `n`):
 
-## Steps:
+1. **Prepare folder** - flattens the directory tree. Every video **and its
+   subtitle** file found anywhere below the current folder is moved into the
+   base folder. Empty sub-folders are removed and name collisions between
+   files coming from different sub-folders are resolved automatically.
 
-1)run `pip install tvdbsimple` (need python for pip to work)
+2. **Remove text** - strips unwanted text from file names. You can remove
+   several strings at once (separate them with `|`), use a regular
+   expression, or type `tags` to remove common release-group noise
+   (`[Group]`, `(720p)`, codec tags, etc.) in one pass. Runs in a loop so you
+   can clean names incrementally.
 
-2)Copy all .py files from anime_reanmer folder into the base folder of the series and run python main.py
+3. **Rename episodes** - matches each file against TheTVDB (by season+episode
+   **or** by absolute number) and renames it to a clean, media-server
+   friendly layout:
+   ```
+   Series - S01E02 - Episode Name.ext
+   ```
 
-## Detailed explanation[MUST READ]
+4. **Organise into season folders** - moves the renamed files into
+   `Season 1`, `Season 2`, ... folders (specials go into `Specials`).
 
-This script works bsed on absolute numbering (i mean episode numbers like episode 2.mp4)
+5. **Download metadata** - downloads the series poster/banner/fanart, a
+   thumbnail for each episode, and writes `.nfo` sidecar files understood by
+   Plex, Jellyfin, Kodi and Emby.
 
-1)main.py:Do you want to prepare folder(y/n)
+## Rollback
 
-if yes this will move all files from the sub folders to mail folders this is necessary
+Every rename/move performed by any stage is recorded in a hidden
+`.anime_renamer_log.json` file. If you do not like the result, just re-run
+the tool and choose **Roll back** at the first prompt - it reverses every
+operation in the correct order and restores your original layout exactly.
+You can also run rollback directly:
 
-2)Remove text to only leave episode number(y/n)
+```bash
+python -m anime_renamer.rollback      # installed
+python rollback.py                    # copy & run method
+```
 
-if yes this will help in converting the file name to required format.
-
-3)Rename episodes(y/n)
-
-if yes this will rename the files into the following format Naruto Ep:1 S1E1 -Enter: Naruto Uzumaki!(title Ep:episode number S season number Episodenumber - episode name) (only one format can be used)
-
-4)Do you want to oraganize result back into season folders(y/n)
-
-if yes this will oraanized the reanamed episodes into respective season folders
-
-5)Do you want to download metadata for everything(y/n)
-
-if yes this will download meta data for all episodes.
-
-## ROLLBACK
-
-IF u didnt like the output or want to change it fpr any other reason
-copy rollback.py from anime_renamer folder and run it.(python rollack.py)
-
-## DEVELOPER
+## Developer
 
 Please contribute.
 
-fork -> clone-> branch-> commit with proper comments.
+fork -> clone -> branch -> commit with proper comments.
 
 ## TO-DO
 
-1)Need to make electron app for ease of use.
-
-2)Support for more input file formats like s01e02.
+1. Electron / GUI app for ease of use.
+2. Even more exotic naming conventions.
 
 ## Thanks
 
-Thanks to TVDBsimple.
+Thanks to TVDBsimple and TheTVDB.
